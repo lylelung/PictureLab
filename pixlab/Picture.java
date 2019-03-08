@@ -38,6 +38,15 @@ public class Picture extends SimplePicture
     super(fileName);
   }
   
+  public void keepOnlyBlue()
+  {
+      Pixel[][] picture = this.getPixels2D();
+      zeroRed();
+     zeroGreen();
+    }
+    
+  
+  
   /**
    * Constructor that takes the width and height
    * @param height the height of the desired picture
@@ -86,6 +95,34 @@ public class Picture extends SimplePicture
   }
   
   /** Method to set the blue to 0 */
+  
+  
+  public void zeroRed()
+  {
+      Pixel[][] picture = this.getPixels2D();
+      for (Pixel[] rows : picture)
+      {
+          for( Pixel p : rows )
+          {
+              int red = p.getRed();
+              p.setRed( red-red );
+           }
+      }
+  } //End zerored()
+   
+  public void zeroGreen()
+  {
+      Pixel[][] picture = this.getPixels2D();
+      for ( Pixel[] rows : picture)
+      {
+          for (Pixel p :rows)
+          {
+              int green = p.getGreen();
+              p.setGreen(0);
+            }
+        }
+    }
+  
   public void zeroBlue()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -96,7 +133,7 @@ public class Picture extends SimplePicture
         pixelObj.setBlue(0);
       }
     }
-  }
+  } //End zeroBlue()
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture

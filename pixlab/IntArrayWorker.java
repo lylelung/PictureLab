@@ -78,6 +78,7 @@ public class IntArrayWorker
     System.out.println();
   }
   
+  
   public int getCount(int n)
   {
       int count =0;
@@ -91,15 +92,13 @@ public class IntArrayWorker
         }
         return count;
     }
+    /*
 public int getLargest()
 {
-    int Largest = matrix[0][0];
-    for (int[] pixel : row)
-    {
-        for (int row : )
+    int
 }
 }
-    
+*/  
   /** 
    * fill the array with a pattern
    */
