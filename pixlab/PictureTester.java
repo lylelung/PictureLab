@@ -25,6 +25,22 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
+  /* Jesus take the wheel */
+  public static void testMirrorVerticalRightToLeft()
+  {
+      Picture redMotorcycle = new Picture("redMotorcycle.jpg");
+    redMotorcycle.explore();
+    redMotorcycle.mirrorVerticalRightToLeft();
+    redMotorcycle.explore();
+  }
+ 
+  public static void testMirrorUpAndDown()
+  {
+      Picture redMotorcycle = new Picture("redMotorcycle.jpg");
+    redMotorcycle.explore();
+    redMotorcycle.mirrorVerticalRightToLeft();
+    redMotorcycle.explore();
+  }
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
@@ -71,7 +87,8 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
- 
+    testMirrorUpAndDown();
+    testMirrorVerticalRightToLeft();
     testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
