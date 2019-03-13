@@ -38,16 +38,17 @@ public class PictureTester
   {
       Picture redMotorcycle = new Picture("redMotorcycle.jpg");
     redMotorcycle.explore();
-    redMotorcycle.mirrorVerticalRightToLeft();
+    redMotorcycle.mirrorUpAndDown();
     redMotorcycle.explore();
   }
   
+  
   /** Method to test mirrorTemple */
-  public static void testMirrorTemple()
+  public static void testMirrorTempleReflect()
   {
     Picture temple = new Picture("temple.jpg");
     temple.explore();
-    temple.mirrorTemple();
+    temple.mirrorTempleReflect();
     temple.explore();
   }
   
@@ -72,7 +73,14 @@ public class PictureTester
       beach.keepOnlyBlue();
       beach.explore();
     }
+  public static void testSnowmanReflect()
+  {
+      Picture snowman = new Picture("snowman.jpg");
+      snowman.snowmanreflect();
+      snowman.explore();
+    }
   
+    
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -90,11 +98,13 @@ public class PictureTester
     testMirrorUpAndDown();
     testMirrorVerticalRightToLeft();
     testMirrorVertical();
+    testMirrorTempleReflect();
+    testSnowmanReflect();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
