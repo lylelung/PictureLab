@@ -8,7 +8,8 @@
  */
 public class PictureTester
 {
-  /** Method to test zeroBlue */
+ /*   
+ 
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
@@ -17,7 +18,7 @@ public class PictureTester
     beach.explore();
   }
   
-  /** Method to test mirrorVertical */
+  
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -25,7 +26,7 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  /* Jesus take the wheel */
+  
   public static void testMirrorVerticalRightToLeft()
   {
       Picture redMotorcycle = new Picture("redMotorcycle.jpg");
@@ -43,7 +44,7 @@ public class PictureTester
   }
   
   
-  /** Method to test mirrorTemple */
+ 
   public static void testMirrorTempleReflect()
   {
     Picture temple = new Picture("temple.jpg");
@@ -51,7 +52,7 @@ public class PictureTester
     temple.mirrorTempleReflect();
     temple.explore();
   }
-  
+  */
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -67,6 +68,7 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
+  /* weird stuff
   public static void testkeepOnlyBlue()
   {
       Picture beach = new Picture("beach.jpg");
@@ -80,7 +82,7 @@ public class PictureTester
       snowman.explore();
     }
   
-    
+    */
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -88,18 +90,18 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    testkeepOnlyBlue();
+   //testZeroBlue();
+    //testkeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorUpAndDown();
-    testMirrorVerticalRightToLeft();
-    testMirrorVertical();
-    testMirrorTempleReflect();
-    testSnowmanReflect();
+    //testMirrorUpAndDown();
+    //testMirrorVerticalRightToLeft();
+    //testMirrorVertical();
+    //testMirrorTempleReflect();
+    //testSnowmanReflect();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();

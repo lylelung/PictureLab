@@ -46,6 +46,31 @@ public class Picture extends SimplePicture
     }
     
   
+     public void copy(Picture fromPic,
+ int startRow, int startCol)
+ {
+ Pixel fromPixel = null;
+ Pixel toPixel = null;
+ Pixel[][] toPixels = this.getPixels2D();
+ Pixel[][] fromPixels = fromPic.getPixels2D();
+ for (int fromRow = 0, toRow = startRow;
+ fromRow < fromPixels.length &&
+ toRow < toPixels.length;
+ fromRow++, toRow++)
+ {
+ for (int fromCol = 0, toCol = startCol;
+ fromCol < fromPixels[0].length &&
+ toCol < toPixels[0].length;
+ fromCol++, toCol++)
+ {
+ fromPixel = fromPixels[fromRow][fromCol];
+ toPixel = toPixels[toRow][toCol];
+ toPixel.setColor(fromPixel.getColor());
+ }
+ }
+ }
+    
+    
   
   /**
    * Constructor that takes the width and height
@@ -238,6 +263,9 @@ public class Picture extends SimplePicture
     }
   }
   
+  
+  
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -245,20 +273,23 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic, 
-                 int startRow, int startCol)
+  
+   public void copy(Picture fromPic, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow = 0, toRow = startRow; 
-         fromRow < fromPixels.length &&
+    for (int fromRow = fSR, toRow = startRow; 
+         fromRow < fER &&
          toRow < toPixels.length; 
          fromRow++, toRow++)
     {
-      for (int fromCol = 0, toCol = startCol; 
-           fromCol < fromPixels[0].length &&
+      for (int fromCol = fSC, toCol = startCol; 
+           fromCol < fEC &&
            toCol < toPixels[0].length;  
            fromCol++, toCol++)
       {
@@ -269,7 +300,7 @@ public class Picture extends SimplePicture
     }   
   }
   
-public void snowmanreflect()
+ public void snowmanreflect()
 {
     int mirrorPoint = 170;
     Pixel leftPixel = null;
@@ -296,16 +327,17 @@ public void snowmanreflect()
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("Egg.jpg");
+    Picture flower2 = new Picture("seagull.jpg");
+   // Picture flower3 = new Picture("");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    // this.copy(flower3,200,0);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+   // this.copy(flower1,400,0);
+   // this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
   }
