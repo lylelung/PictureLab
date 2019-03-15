@@ -38,6 +38,7 @@ public class Picture extends SimplePicture
     super(fileName);
   }
   
+  
   public void keepOnlyBlue()
   {
       Pixel[][] picture = this.getPixels2D();

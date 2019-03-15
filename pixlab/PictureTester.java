@@ -61,13 +61,21 @@ public class PictureTester
     canvas.explore();
   }
   
-  /** Method to test edgeDetection */
+  public static void testCopy()
+  {
+      Picture ocean = new Picture("beach.jpg");
+      Picture flower = new Picture("snowman.jpg");
+      ocean.copy(flower,10,10,60,160,190,230);
+      ocean.explore();
+    }  
+ 
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
+
   /* weird stuff
   public static void testkeepOnlyBlue()
   {
@@ -107,7 +115,7 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     testCollage();
-    //testCopy();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
